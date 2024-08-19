@@ -1,0 +1,37 @@
+import datetime
+
+def chatbot():
+    print("Chatbot: Hi there! I'm here to help you. What can I do for you today?")
+
+    while True:
+        user_input = input("You: ").lower()
+
+        # Greeting responses
+        if "hello" in user_input or "hi" in user_input:
+            print("Chatbot: Hello! How can I assist you today?")
+        
+        # Time-related response
+        elif "time" in user_input:
+            current_time = datetime.datetime.now().strftime("%H:%M")
+            print(f"Chatbot: The current time is {current_time}.")
+        
+        # Date-related response
+        elif "date" in user_input:
+            current_date = datetime.datetime.now().strftime("%Y-%m-%d")
+            print(f"Chatbot: Today's date is {current_date}.")
+        
+        # Asking the chatbot how it is
+        elif "how are you" in user_input:
+            print("Chatbot: I'm just a bunch of code, but thanks for asking! How about you?")
+        
+        # Farewell response
+        elif "bye" in user_input or "exit" in user_input:
+            print("Chatbot: Goodbye! Have a great day!")
+            break
+        
+        # Default response for unrecognized input
+        else:
+            print("Chatbot: I'm sorry, I don't understand that. Can you please ask something else?")
+
+# Start the chatbot
+chatbot()
